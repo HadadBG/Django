@@ -1,0 +1,27 @@
+<html>
+  <body>
+    {%comment%}
+    Esto es un Comentario
+    Multilinea
+    {%endcomment%}
+    {% include "superior/barra.html"%}
+    <h1 style="color:red"> Hola Mundo desde una plantilla</h1>
+    {%if persona.nombre == 'Hadad'%}
+      <p>Buenos dias Hadad n__n</p>
+    {%else%}
+      <p>no se quien eres :S</p>
+    {% endif %}
+  <p>Mi nombre es {{persona.nombre.upper}} {{persona.apellidos.upper}}</p>
+  <p>Estamos viendo el tema de las plantillas el d&iacute;a {{momento_actual.day}} / {{momento_actual.month}} / {{momento_actual.year}}</p>
+  <p><strong>Temas del Curso:</strong></p>
+  <ul>
+  {% if temas%}
+    {% for tema in temas%}
+      <li>{{tema}}</li>
+    {% endfor %}
+  {%else%}
+    <p>No hay elementos que mostrar</p>
+  {% endif %}
+</ul>
+  </body>
+</html> 
